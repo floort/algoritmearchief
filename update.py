@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
 import os
-import urllib2
+import urllib.request
 
 REPO_PATH = "/home/floort/devel/page_snapshots/"
 DELAY = 30*60 # 30 minutes
 URL = "https://algoritmes.overheid.nl/api/downloads/NLD?filetype=csv" 
 try:
-  page_content = urllib2.urlopen(URL).read()
+  page_content = urllib.request.urlopen(URL).read()
   open("Algoritmebeschrijvingen.csv", "w").write(page_content)
   print("OK")
 except:
